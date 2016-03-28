@@ -78,6 +78,10 @@ namespace RadialMenuControl.UserControl
                 PieCompositeTransform.CenterY = Diameter/2;
                 CustomPieCompositeTransform.CenterX = Diameter/2;
                 CustomPieCompositeTransform.CenterY = Diameter/2;
+
+                // Set the root menu's draggability.
+                var floatingParent = FindParent<Floating>(this);
+                if (floatingParent != null) floatingParent.ShouldManipulateChild = IsDraggable;
             };
             CenterButton.Style = Resources["RoundedCenterButton"] as Style;
 
@@ -261,7 +265,7 @@ namespace RadialMenuControl.UserControl
 
             // a custom menu may have changed dragability. Ensure we are draggable, of using Floating
             var floatingParent = FindParent<Floating>(this);
-            if (floatingParent != null) floatingParent.ShouldManipulateChild = true;
+            if (floatingParent != null) floatingParent.ShouldManipulateChild = IsDraggable;
 
             // If we have a previous pie, we're going back to it
             ChangePie(this, PreviousPies[PreviousPies.Count - 1], false);
