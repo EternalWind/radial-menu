@@ -193,6 +193,7 @@
                 Background="{Binding CenterButtonBackgroundFill}"
                 Foreground="{Binding CenterButtonForeground}"
                 Height="{Binding CenterButtonSize}"
+                Width="{Binding CenterButtonSize}"
                 BorderBrush="{Binding CenterButtonBorder}"
                 Canvas.Top="{Binding CenterButtonTop}"
                 Canvas.Left="{Binding CenterButtonLeft}"

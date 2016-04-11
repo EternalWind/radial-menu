@@ -72,8 +72,8 @@ namespace RadialMenuControl.UserControl
 
             Loaded += (sender, args) =>
             {
-                CenterButtonTop = Diameter/2 - (CenterButton.ActualWidth/2);
-                CenterButtonLeft = Diameter/2 - (CenterButton.ActualHeight/2);
+                CenterButtonTop = Diameter/2 - (CenterButton.Width/2);
+                CenterButtonLeft = Diameter/2 - (CenterButton.Height/2);
                 PieCompositeTransform.CenterX = Diameter/2;
                 PieCompositeTransform.CenterY = Diameter/2;
                 CustomPieCompositeTransform.CenterX = Diameter/2;
@@ -204,7 +204,7 @@ namespace RadialMenuControl.UserControl
         public async void TogglePie()
         {
             var floatingParent = FindParent<Floating>(this);
-            var distance = Diameter/2 - CenterButton.ActualHeight/2;
+            var distance = Diameter/2 - CenterButton.Height/2;
 
             if (Pie.Visibility == Visibility.Visible)
             {
@@ -213,8 +213,8 @@ namespace RadialMenuControl.UserControl
                 await CloseStoryboard.PlayAsync();
 
                 Pie.Visibility = Visibility.Collapsed;
-                Width = CenterButton.ActualWidth;
-                Height = CenterButton.ActualHeight;
+                Width = CenterButton.Width;
+                Height = CenterButton.Height;
                 // Check if we're floating
                 floatingParent?.ManipulateControlPosition(distance, distance, Width, Height);
                 Canvas.SetTop(CenterButton, 0);
@@ -226,8 +226,8 @@ namespace RadialMenuControl.UserControl
                 Height = Diameter;
                 // Check if we're floating
                 floatingParent?.ManipulateControlPosition(-distance, -distance, Width, Height);
-                Canvas.SetTop(CenterButton, Diameter/2 - CenterButton.ActualHeight/2);
-                Canvas.SetLeft(CenterButton, Diameter/2 - CenterButton.ActualWidth/2);
+                Canvas.SetTop(CenterButton, Diameter/2 - CenterButton.Height/2);
+                Canvas.SetLeft(CenterButton, Diameter/2 - CenterButton.Width/2);
                 Pie.Visibility = Visibility.Visible;
 
                 await OpenStoryboard.PlayAsync();
