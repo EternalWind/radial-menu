@@ -93,6 +93,9 @@ namespace RadialMenuControl.Components
         public static readonly DependencyProperty ValueProperty =
             DependencyProperty.Register("Value", typeof (object), typeof (RadialMenuButton), null);
 
+        public static readonly DependencyProperty LabelBrushProperty =
+            DependencyProperty.Register("ContentBrush", typeof (Brush), typeof (RadialMenuButton), null);
+
         /// <summary>
         ///     Label, displayed in the inner portion of the button
         /// </summary>
@@ -199,6 +202,15 @@ namespace RadialMenuControl.Components
         {
             get { return (ButtonType) GetValue(ButtonTypeProperty); }
             set { SetValue(ButtonTypeProperty, value); }
+        }
+
+        /// <summary>
+        ///     The brush used to draw the label.
+        /// </summary>
+        public Brush LabelBrush
+        {
+            get { return (Brush) GetValue(LabelBrushProperty); }
+            set { SetValue(LabelBrushProperty, value); }
         }
 
         // Inner Arc Colors

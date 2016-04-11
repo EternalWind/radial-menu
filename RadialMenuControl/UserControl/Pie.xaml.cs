@@ -210,6 +210,7 @@ namespace RadialMenuControl.UserControl
                     IsLabelHidden = slice.IsLabelHidden,
                     Label = slice.Label,
                     LabelSize = slice.LabelSize,
+                    LabelBrush = slice.LabelBrush,
                     // Original Button
                     OriginalRadialMenuButton = slice,
                     // Access Keys

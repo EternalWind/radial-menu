@@ -139,7 +139,8 @@
                 FontSize="{Binding LabelSize}"
                 Text="{Binding Label}"
                 IsHitTestVisible="False"
-                Margin="0, 25, 0, 0">
+                Margin="0, 25, 0, 0"
+                Foreground="{Binding LabelBrush}">
             </TextBlock>
 
            

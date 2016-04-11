@@ -288,6 +288,9 @@ namespace RadialMenuControl.UserControl
         public static readonly DependencyProperty CustomValueProperty =
            DependencyProperty.Register("CustomValue", typeof(string), typeof(PieSlice), null);
 
+        public static readonly DependencyProperty LabelBrushProperty =
+           DependencyProperty.Register("ContentBrush", typeof(Brush), typeof(PieSlice), null);
+
         /// <summary>
         /// Outer slice path access key
         /// </summary>
@@ -401,6 +404,15 @@ namespace RadialMenuControl.UserControl
                 SetValue(CustomValueProperty, value);
                 OriginalRadialMenuButton.Value = value;
             }
+        }
+
+        /// <summary>
+        /// The brush used to draw the label.
+        /// </summary>
+        public Brush LabelBrush
+        {
+            get { return (Brush)GetValue(LabelBrushProperty); }
+            set { SetValue(LabelBrushProperty, value); }
         }
 
         /// <summary>
